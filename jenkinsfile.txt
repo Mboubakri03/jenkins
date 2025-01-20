@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out the code...'
-                git branch: 'main', url: 'https://your-repo-url.git'
+                git branch: 'master', url: 'https://github.com/Mboubakri03/jenkins.git'
             }
         }
         stage('Build') {
@@ -29,7 +29,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                sh 'java -jar target/your-app-name.jar'
+                sh 'java -jar target/jenkinstest-0.0.1-SNAPSHOT.jar'
             }
         }
 	}

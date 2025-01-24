@@ -16,14 +16,10 @@
 
 	<properties>
 		<java.version>17</java.version>
-		<sonar.projectKey>java-sonar-project</sonar.projectKey>
-		<sonar.projectName>Jenkins Test</sonar.projectName>
-		<sonar.projectVersion>1.0</sonar.projectVersion>
-		<sonar.sources>src/main/java</sonar.sources>
-		<sonar.tests>src/test/java</sonar.tests>
-		<sonar.java.binaries>target/classes</sonar.java.binaries>
+		<sonar.projectKey>jenkinstest</sonar.projectKey>
+		<sonar.organization>jenkinstest</sonar.organization>
 		<sonar.host.url>http://localhost:9000</sonar.host.url>
-		<sonar.login>squ_9c45c9ffc1d7ce77e9f893f8b7d772468fea12b7</sonar.login>
+		<sonar.login>sqp_0714bce6d783c3b421d9f9d6eccafccf811ccc1a</sonar.login>
 	</properties>
 
 	<dependencies>
@@ -53,6 +49,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -66,40 +67,9 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-
-			<plugin>
-				<groupId>org.sonarsource.scanner.maven</groupId>
-				<artifactId>sonar-maven-plugin</artifactId>
-				<version>4.7.0.2747</version>
-				<configuration>
-					<sonar.host.url>${sonar.host.url}</sonar.host.url>
-					<sonar.login>${sonar.login}</sonar.login>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.10</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>

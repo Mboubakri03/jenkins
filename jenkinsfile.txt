@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        SONAR_PROJECT_KEY = 'jenkins'
+        SONAR_PROJECT_KEY = 'jenkinstest'
         SONAR_ENV_NAME = 'sonar-token'
         GIT_URL = 'https://github.com/Mboubakri03/jenkins.git'
         BRANCH_NAME = 'master'
